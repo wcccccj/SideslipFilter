@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/item_frameRb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/selector_frame_gv_item_bg"
+        android:button="@null"
+        android:lines="2"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:textColor="@drawable/selector_search_gv_item_tv"
+        android:textSize="22px">
+
+    </CheckBox>
+</LinearLayout>

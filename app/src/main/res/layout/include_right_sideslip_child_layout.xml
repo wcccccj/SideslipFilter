@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="100px"
+    android:background="@color/colF4F4F4">
+
+    <RelativeLayout
+        android:id="@+id/topbar_lay"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:background="@color/colF4F4F4">
+
+        <ImageView
+            android:id="@+id/select_brand_back_im"
+            android:layout_width="46dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_app_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="品牌"
+            android:textColor="#444444"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/select_brand_ok_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="确定"
+            android:textColor="#444444"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topbar_lay"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/select_brand_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:divider="@null">
+
+        </ListView>
+
+
+    </LinearLayout>
+</RelativeLayout>

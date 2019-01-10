@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="30px"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:paddingRight="30px">
+
+    <LinearLayout
+        android:id="@+id/item_select_lay"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:layout_marginTop="20px"
+        android:orientation="horizontal">
+
+        <!--当前筛选类目名-->
+        <TextView
+            android:id="@+id/item_frameTv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#2A2A2A"
+            android:textSize="28px" />
+
+        <!--展示已选择的类目-->
+        <TextView
+            android:id="@+id/item_selectTv"
+            android:layout_width="260px"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:gravity="right|center_vertical"
+            android:singleLine="true"
+            android:drawablePadding="3px"
+            android:textColor="#fb4747"
+            android:textSize="20px" />
+
+    </LinearLayout>
+
+    <com.example.study.android.androidscreening.ui.AutoMeasureHeightGridView
+        android:id="@+id/item_selectGv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20px"
+        android:horizontalSpacing="20px"
+        android:numColumns="3"
+        android:visibility="gone"
+        android:verticalSpacing="20px" />
+
+</LinearLayout>

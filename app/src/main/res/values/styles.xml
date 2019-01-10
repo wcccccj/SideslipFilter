@@ -1,0 +1,34 @@
+<resources>
+
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="elevation">0dp</item>
+
+        <!-- Actionbar颜色： android:theme="@style/AppThemeFullScreen"
+        App bar 底色这个设定分为二种情况，1.若你的 android app 仍是使用 actionbar ，则直接在风格 (styles) 或是主题 (themes) 里进行设定
+        colorPrimary 参数即可；2.可若是采用 toolbar 的话，则要在界面 (layout) 里面设定 toolbar 控件的 background 属性。-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!--&lt;!&ndash;状态栏底色&ndash;&gt;-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+
+        <!--各控制元件(如：check box、switch 或是 radoi) 被勾选 (checked) 或是选定 (selected) 的颜色。-->
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme" parent="AppTheme.Base"></style>
+
+    <style name="AppThemeFullScreen" parent="AppTheme.Base">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="popupWindowAnimRight">
+        <item name="android:windowEnterAnimation">@anim/page_anima_right_in</item>
+        <item name="android:windowExitAnimation">@anim/page_anima_right_out</item>
+    </style>
+</resources>
