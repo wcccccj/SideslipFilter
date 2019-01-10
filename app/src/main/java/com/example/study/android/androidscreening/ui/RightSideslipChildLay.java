@@ -32,6 +32,7 @@ public class RightSideslipChildLay extends FrameLayout {
     private ImageView meunBackIm;
     private TextView meunOkTv;
     private int position;
+    private TextView tvTitle;
 
     /**
      * 构造函数
@@ -40,13 +41,14 @@ public class RightSideslipChildLay extends FrameLayout {
      * @param Fristlist 已选择的筛选项集合
      */
     public RightSideslipChildLay(Context context, List<AttrList.Attr.Vals> mVals_data,
-                                 List<AttrList.Attr.Vals> Fristlist, int pos) {
+                                 List<AttrList.Attr.Vals> Fristlist, int pos, String title) {
         super(context);
         mCtx = context;
         this.mVals_data = mVals_data;
         this.position = pos;
         selectBrandData = new ArrayList<AttrList.Attr.Vals>();
         initView(mVals_data, Fristlist);
+        tvTitle.setText(title);
     }
 
     //初始化view
@@ -55,6 +57,8 @@ public class RightSideslipChildLay extends FrameLayout {
         mBrandList = (ListView) findViewById(R.id.select_brand_list);
         meunBackIm = (ImageView) findViewById(R.id.select_brand_back_im);
         meunOkTv = (TextView) findViewById(R.id.select_brand_ok_tv);
+        tvTitle = (TextView) findViewById(R.id.select_brand_back_tv);
+
         meunBackIm.setOnClickListener(ClickListener);
         meunOkTv.setOnClickListener(ClickListener);
         setupList(datas, Fristlist);

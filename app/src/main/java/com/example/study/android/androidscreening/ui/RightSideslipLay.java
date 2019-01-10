@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.study.android.androidscreening.R;
 import com.example.study.android.androidscreening.adapter.RightSideslipLayAdapter;
@@ -92,8 +93,8 @@ public class RightSideslipLay extends RelativeLayout {
         slidLayFrameAdapter.setMoreCallBack(new RightSideslipLayAdapter.SelechMoreCallBack() {
 
             @Override
-            public void setupMore(List<AttrList.Attr.Vals> mSelectData, List<AttrList.Attr.Vals> ValsData, int position) {
-                getPopupWindow(mSelectData, ValsData, position);
+            public void setupMore(List<AttrList.Attr.Vals> mSelectData, List<AttrList.Attr.Vals> ValsData, int position, String title) {
+                getPopupWindow(mSelectData, ValsData, position, title);
                 mDownMenu.setOnMeanCallBack(meanCallBack);
             }
         });
@@ -170,12 +171,12 @@ public class RightSideslipLay extends RelativeLayout {
      * @param mSelectData 已选择的List
      * @param ValsData 所有元素List
      */
-    private void getPopupWindow(List<AttrList.Attr.Vals> mSelectData, List<AttrList.Attr.Vals> ValsData, int pos) {
+    private void getPopupWindow(List<AttrList.Attr.Vals> mSelectData, List<AttrList.Attr.Vals> ValsData, int pos, String title) {
         if (mMenuPop != null) {
             dismissMenuPop();
             return;
         } else {
-            initPopuptWindow(mSelectData, ValsData, pos);
+            initPopuptWindow(mSelectData, ValsData, pos, title);
         }
     }
 
@@ -185,9 +186,8 @@ public class RightSideslipLay extends RelativeLayout {
     private PopupWindow mMenuPop;
     public RightSideslipChildLay mDownMenu;
 
-    protected void initPopuptWindow(List<AttrList.Attr.Vals> mSelectData, List<AttrList.Attr.Vals> ValsData, int pos) {
-        // 当前传的valsData为"品牌"的listData, 需改为动态
-        mDownMenu = new RightSideslipChildLay(getContext(), ValsData, mSelectData, pos);
+    protected void initPopuptWindow(List<AttrList.Attr.Vals> mSelectData, List<AttrList.Attr.Vals> ValsData, int pos, String title) {
+        mDownMenu = new RightSideslipChildLay(getContext(), ValsData, mSelectData, pos, title);
         if (mMenuPop == null) {
             mMenuPop = new PopupWindow(mDownMenu, LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT);
         }

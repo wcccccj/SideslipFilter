@@ -4,7 +4,6 @@ import android.view.View;
 
 /**
  * 防止Button的频繁点击,多次执行点击事件
- * <p/>
  */
 public abstract class OnClickListenerWrapper implements View.OnClickListener {
 

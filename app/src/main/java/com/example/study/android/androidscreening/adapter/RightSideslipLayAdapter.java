@@ -109,7 +109,7 @@ public class RightSideslipLayAdapter extends SimpleBaseAdapter<AttrList.Attr> {
                 mAttr.setSelectVals(seachData);
                 mAttr.setShowStr(setupSelectStr(seachData));
                 // 打开 查看更多 列表
-                mSelechMoreCallBack.setupMore(seachData, mAttr.getVals(), pos);
+                mSelechMoreCallBack.setupMore(seachData, mAttr.getVals(), pos, mAttr.getKey());
             }
         });
 
@@ -186,7 +186,7 @@ public class RightSideslipLayAdapter extends SimpleBaseAdapter<AttrList.Attr> {
          * @param ValsData 当前筛选项所有元素
          * @param pos 当前筛选类目定位
          */
-        void setupMore(List<AttrList.Attr.Vals> da, List<AttrList.Attr.Vals> ValsData, int pos);
+        void setupMore(List<AttrList.Attr.Vals> da, List<AttrList.Attr.Vals> ValsData, int pos, String title);
     }
 
     public SelechMoreCallBack mSelechMoreCallBack;
