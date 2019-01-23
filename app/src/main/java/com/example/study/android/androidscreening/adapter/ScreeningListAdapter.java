@@ -1,17 +1,17 @@
 package com.example.study.android.androidscreening.adapter;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.study.android.androidscreening.R;
 import com.example.study.android.androidscreening.model.AttrList;
 import com.example.study.android.androidscreening.ui.OnClickListenerWrapper;
+import com.example.study.android.androidscreening.ui.ScreeningActivity;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -51,8 +51,9 @@ public class ScreeningListAdapter extends SimpleBaseAdapter<AttrList.Attr.Vals> 
                 notifyDataSetChanged();
 
                 if (isSelect) {
+//                    设置可选上限
                     if (removeDuplicate(getAdapterChick()).size() >= 9) {
-                        // ToastUtil.showSingleToast("抱歉，最多只能选择9个");
+                        Toast.makeText(context, "抱歉，最多只能选择9个", Toast.LENGTH_SHORT).show();
                         topBrand.setChick(false);
                         notifyDataSetChanged();
                         return;

@@ -147,7 +147,8 @@ public class RightSideslipLay extends RelativeLayout {
                     break;
 
                 case R.id.fram_reset_but:
-
+                    slidLayFrameAdapter = null;
+                    setUpList();
                     break;
             }
         }
@@ -208,7 +209,6 @@ public class RightSideslipLay extends RelativeLayout {
      */
 
 
-    // 外部接口暴露
     /**
      * 创建CloseMenuCallBack接口
      */

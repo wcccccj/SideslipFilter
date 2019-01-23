@@ -29,7 +29,6 @@ public class RightSideslipLayChildAdapter extends SimpleBaseAdapter<AttrList.Att
      * @param context
      * @param data
      * @param selectVals
-     * @param position 当前筛选项位于集合的定位
      */
     public RightSideslipLayChildAdapter(Context context, List<AttrList.Attr.Vals> data,
                                         List<AttrList.Attr.Vals> selectVals) {

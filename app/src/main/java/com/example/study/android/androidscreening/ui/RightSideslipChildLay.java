@@ -65,7 +65,7 @@ public class RightSideslipChildLay extends FrameLayout {
 
     }
 
-    //设置默认选中的CheckBox的状态
+    // 设置默认选中的CheckBox的状态
     private void setupList(List<AttrList.Attr.Vals> mBrand_data, List<AttrList.Attr.Vals> Fristlist) {
         if (mBrand_data != null && mBrand_data.size() > 0) {
             // 遍历当前筛选元素
