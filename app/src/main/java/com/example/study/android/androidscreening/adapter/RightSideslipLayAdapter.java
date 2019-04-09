@@ -87,29 +87,29 @@ public class RightSideslipLayAdapter extends SimpleBaseAdapter<AttrList.Attr> {
         } else {
             mChildAdapter = (RightSideslipLayChildAdapter) childLvGV.getAdapter();
             mAttr.setSelectVals(mAttr.getSelectVals());
-            mChildAdapter.setSeachData(mAttr.getSelectVals());
+            mChildAdapter.setSearchData(mAttr.getSelectVals());
             mChildAdapter.replaceAll(list);
         }
 
         // 点击 GV 项时触发
         mChildAdapter.setSlidLayFrameChildCallBack(new RightSideslipLayChildAdapter.SlidLayFrameChildCallBack() {
             @Override
-            public void CallBackSelectData( List<AttrList.Attr.Vals> seachData) {
-                mAttr.setShowStr(setupSelectStr(seachData));
-                mAttr.setSelectVals(seachData);
+            public void CallBackSelectData( List<AttrList.Attr.Vals> SearchData) {
+                mAttr.setShowStr(setupSelectStr(SearchData));
+                mAttr.setSelectVals(SearchData);
                 notifyDataSetChanged();
-                selechDataCallBack.setupAttr(setupSelectDataStr(seachData), mAttr.getKey());
+                selechDataCallBack.setupAttr(setupSelectDataStr(SearchData), mAttr.getKey());
 
             }
         });
         // 当点击查看更多时触发
         mChildAdapter.setShowPopCallBack(new RightSideslipLayChildAdapter.ShowPopCallBack() {
             @Override
-            public void setupShowPopCallBack(List<AttrList.Attr.Vals> seachData) {
-                mAttr.setSelectVals(seachData);
-                mAttr.setShowStr(setupSelectStr(seachData));
+            public void setupShowPopCallBack(List<AttrList.Attr.Vals> SearchData) {
+                mAttr.setSelectVals(SearchData);
+                mAttr.setShowStr(setupSelectStr(SearchData));
                 // 打开 查看更多 列表
-                mSelechMoreCallBack.setupMore(seachData, mAttr.getVals(), pos, mAttr.getKey());
+                mSelechMoreCallBack.setupMore(SearchData, mAttr.getVals(), pos, mAttr.getKey());
             }
         });
 

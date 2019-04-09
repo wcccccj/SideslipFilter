@@ -34,9 +34,143 @@ public class RightSideslipLay extends RelativeLayout {
     private RelativeLayout mRelateLay;
     private RightSideslipLayAdapter slidLayFrameAdapter;
     private List<AttrList.Attr.Vals> ValsData;
-    private String JsonStr = "{\"attr\": [{ \"isoPen\": true,\"single_check\": 1,\"key\": \"品牌\", \"vals\": [ { \"val\": \"雅格\"}, {\"val\": \"志高/Chigo\" }, {\"val\": \"格东方\" },{\"val\": \"Chigo\" }, {\"val\": \"格OW\" },{\"val\": \"志go\" }, {\"val\": \"格LLOW\" },{\"val\": \"志o\" }, {\"val\": \"LLOW\" }, {\"val\": \"众桥\"},{\"val\": \"超人/SID\" },{ \"val\": \"扬子342\" }, { \"val\": \"扬舒服\" }, { \"val\": \"扬子东方\"},{ \"val\": \"荣事达/Royalstar\"}]},{\"single_check\": 0,\"key\": \"是否进口\", \"vals\": [{ \"val\": \"国产\"},{ \"val\": \"进口\"}]}," +
-            "{\"single_check\": 0,\"key\": \"灭蚊器类型\", \"vals\": [{ \"val\": \"光触媒灭蚊器\"}]}," +
-            "{\"single_check\": 0,\"key\": \"个数\", \"vals\": [{\"val\": \"1个\"},{\"val\": \"1个\"},{\"val\": \"1个\"},{\"val\": \"1个\"},{\"val\": \"1个\"},{\"val\": \"2个\"},{\"val\": \"3个\"},{\"val\": \"4个\"},{\"val\": \"5个\"},{\"val\": \"5个以上\"},{\"val\": \"10个以上\"}]},{ \"single_check\": 0, \"key\": \"型号\",\"vals\": [{\"val\": \"SI23\" },{\"val\": \"SI23\" },{\"val\": \"SI343\" },{\"val\": \"SI563\" },{\"val\": \"Sgt23\" }]}]}";
+    private String JsonStr = "{\n" +
+            "    \"attr\": [\n" +
+            "        {\n" +
+            "            \"isoPen\": true,\n" +
+            "            \"single_check\": 1,\n" +
+            "            \"key\": \"品牌\",\n" +
+            "            \"vals\": [\n" +
+            "                {\n" +
+            "                    \"val\": \"雅格\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"志高/Chigo\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"格东方\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"Chigo\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"格OW\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"志go\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"格LLOW\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"志o\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"LLOW\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"众桥\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"超人/SID\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"扬子342\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"扬舒服\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"扬子东方\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"荣事达/Royalstar\"\n" +
+            "                }\n" +
+            "            ]\n" +
+            "        },\n" +
+            "        {\n" +
+            "            \"single_check\": 0,\n" +
+            "            \"key\": \"是否进口\",\n" +
+            "            \"vals\": [\n" +
+            "                {\n" +
+            "                    \"val\": \"国产\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"进口\"\n" +
+            "                }\n" +
+            "            ]\n" +
+            "        },\n" +
+            "        {\n" +
+            "            \"single_check\": 0,\n" +
+            "            \"key\": \"灭蚊器类型\",\n" +
+            "            \"vals\": [\n" +
+            "                {\n" +
+            "                    \"val\": \"光触媒灭蚊器\"\n" +
+            "                }\n" +
+            "            ]\n" +
+            "        },\n" +
+            "        {\n" +
+            "            \"single_check\": 0,\n" +
+            "            \"key\": \"个数\",\n" +
+            "            \"vals\": [\n" +
+            "                {\n" +
+            "                    \"val\": \"1个\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"1个\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"1个\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"1个\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"1个\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"2个\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"3个\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"4个\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"5个\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"5个以上\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"10个以上\"\n" +
+            "                }\n" +
+            "            ]\n" +
+            "        },\n" +
+            "        {\n" +
+            "            \"single_check\": 0,\n" +
+            "            \"key\": \"型号\",\n" +
+            "            \"vals\": [\n" +
+            "                {\n" +
+            "                    \"val\": \"SI23\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"SI23\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"SI343\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"SI563\"\n" +
+            "                },\n" +
+            "                {\n" +
+            "                    \"val\": \"Sgt23\"\n" +
+            "                }\n" +
+            "            ]\n" +
+            "        }\n" +
+            "    ]\n" +
+            "}";
 
     public RightSideslipLay(Context context) {
         super(context);
@@ -105,15 +239,27 @@ public class RightSideslipLay extends RelativeLayout {
     private RightSideslipChildLay.onMeanCallBack meanCallBack = new RightSideslipChildLay.onMeanCallBack() {
         @Override
         public void isDisMess(int position, List<AttrList.Attr.Vals> mTotalData, String str) {
+            AttrList.Attr res = (AttrList.Attr) attr.getAttr().get(position);
             if (mTotalData != null) {
-                ((AttrList.Attr) attr.getAttr().get(position)).setTempVals(getValsDatas(mTotalData));
-                ((AttrList.Attr) attr.getAttr().get(position)).setShowStr(str);
+                res.setSelectVals(setSelectItem(mTotalData));
+                res.setTempVals(getValsDatas(mTotalData));
+                res.setShowStr(str);
                 slidLayFrameAdapter.replaceAll(attr.getAttr());
             }
 
             dismissMenuPop();
         }
     };
+
+    private List<AttrList.Attr.Vals> setSelectItem(List<AttrList.Attr.Vals> list) {
+        List<AttrList.Attr.Vals> rets = new ArrayList<>();
+        for (AttrList.Attr.Vals baseRet: list) {
+            if (baseRet.isChick()) {
+                rets.add(baseRet);
+            }
+        }
+        return rets;
+    }
 
     // 获取"查看更多"数据，超过8个时设为查看更多，当前为"品牌"类目
     private List<AttrList.Attr.Vals> getValsDatas(List<AttrList.Attr.Vals> mTotalData) {
@@ -204,9 +350,6 @@ public class RightSideslipLay extends RelativeLayout {
             }
         });
     }
-    /**
-     * 创建PopupWindow
-     */
 
 
     /**

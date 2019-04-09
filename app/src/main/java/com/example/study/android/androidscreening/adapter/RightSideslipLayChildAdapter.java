@@ -17,11 +17,11 @@ import java.util.List;
 
 public class RightSideslipLayChildAdapter extends SimpleBaseAdapter<AttrList.Attr.Vals> {
 
-    private List<AttrList.Attr.Vals> seachData;
+    private List<AttrList.Attr.Vals> searchData;
 
     // 外部类设置类目列表
-    public void setSeachData(List<AttrList.Attr.Vals> seachData) {
-        this.seachData = seachData;
+    public void setSearchData(List<AttrList.Attr.Vals> searchData) {
+        this.searchData = searchData;
     }
 
     /**
@@ -33,7 +33,7 @@ public class RightSideslipLayChildAdapter extends SimpleBaseAdapter<AttrList.Att
     public RightSideslipLayChildAdapter(Context context, List<AttrList.Attr.Vals> data,
                                         List<AttrList.Attr.Vals> selectVals) {
         super(context, data);
-        this.seachData = selectVals;
+        this.searchData = selectVals;
     }
 
 
@@ -78,7 +78,7 @@ public class RightSideslipLayChildAdapter extends SimpleBaseAdapter<AttrList.Att
                 @Override
                 protected void onSingleClick(View v) {
                     if ("查看更多 >".equals(vals.getV())) {
-                        mShowPopCallBack.setupShowPopCallBack(seachData);
+                        mShowPopCallBack.setupShowPopCallBack(searchData);
                     }
                 }
             });
@@ -88,17 +88,17 @@ public class RightSideslipLayChildAdapter extends SimpleBaseAdapter<AttrList.Att
                     return;
                 }
                 vals.setChick(true);
-                seachData.add(vals);
+                searchData.add(vals);
             } else {
                 if ("查看更多 >".equals(vals.getV())) {
                     return;
                 }
                 vals.setChick(false);
-                seachData.remove(vals);
+                searchData.remove(vals);
 
             }
             notifyDataSetChanged();
-            slidLayFrameChildCallBack.CallBackSelectData(removeDuplicate(seachData));
+            slidLayFrameChildCallBack.CallBackSelectData(removeDuplicate(searchData));
 
 
         }
@@ -116,9 +116,9 @@ public class RightSideslipLayChildAdapter extends SimpleBaseAdapter<AttrList.Att
     public interface SlidLayFrameChildCallBack {
         /**
          * 返回 GV 已选列表
-         * @param seachData
+         * @param searchData
          */
-        void CallBackSelectData(List<AttrList.Attr.Vals> seachData);
+        void CallBackSelectData(List<AttrList.Attr.Vals> searchData);
     }
 
     public void setSlidLayFrameChildCallBack(SlidLayFrameChildCallBack slidLayFrameChildCallBack) {
@@ -130,9 +130,9 @@ public class RightSideslipLayChildAdapter extends SimpleBaseAdapter<AttrList.Att
     public interface ShowPopCallBack {
         /**
          * 返回 查看更多 已选列表
-         * @param seachData
+         * @param searchData
          */
-        void setupShowPopCallBack(List<AttrList.Attr.Vals> seachData);
+        void setupShowPopCallBack(List<AttrList.Attr.Vals> searchData);
     }
 
     public void setShowPopCallBack(ShowPopCallBack mShowPopCallBack) {
